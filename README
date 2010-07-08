@@ -26,7 +26,17 @@ Example:
   - goals
   - executables
 
-Slide src directory
+The project metadata file.
+
+  <Project Name>/conf/<Project Name>.info
+
+Example:
+
+company: Puppet Labs
+title: Puppet Training
+footer: Copyright Puppet Labs 2010
+
+The Slide src directory
 
   <Project Name>/src/slides (contains all of the presentation slides and directories).
 
