@@ -1,0 +1,72 @@
+#
+# This is an example Rakefile. Expects to 
+#
+
+$: << "../lib"
+
+#
+#
+#
+
+require 'rake/clean'
+require 'SlideKit'
+
+task :init do 
+  @project = 'acme-presentation'
+  @src = "src"
+  @confdir = "conf" 
+  @outdir = "/tmp/#{@project}"
+  @project_files = { 'info' => "#{@confdir}/#{@project}.info",
+                 'svg' => "#{@confdir}/#{@project}.svg",
+                 'css' => "#{@confdir}/#{@project}.css", }
+end
+
+#
+# Create/Clean output directory
+#
+
+task :clean, :needs => :init do 
+   rm_r @outdir if File.exists?(@outdir)
+end
+
+#
+# Compile textile files 
+#
+
+task :to_file, :needs => :clean do
+  s = SlideKit.new(@project, @outdir)
+  s.build
+end
+
+#
+# Convert to html
+#
+
+task :build_project_dir, :needs => :to_file do
+  #
+  # Copy any S9 helpers into output directory. Problem a better solution is
+  # to use slideshow as a library (todo)
+  #
+  cp_r '../lib/s9-helpers', "#{@outdir}/lib"
+  #
+  # Copy any extra files into your project.
+  # 
+  cp_r "src/code", "#{@outdir}/code"
+  cp_r "src/images", "#{@outdir}/images"
+  cp_r "ext", "#{@outdir}/examples"
+end
+
+task :build,  :needs => :build_project_dir do
+  puts "Compiling presentation"
+  output = %x{cd #{@outdir}; slideshow #{@project}.textile}
+  #
+  # Copy custom css into project directory.
+  #
+  @project_files.each_value do |file|
+    cp file, "#{@outdir}/.", :verbose => true  
+  end 
+  if $? != 0
+    puts output
+    raise "Failed to create presentation"
+  end
+end
