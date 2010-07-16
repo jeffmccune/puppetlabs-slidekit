@@ -1,8 +1,12 @@
-The SlideKit class provides methods to build a single slide file out fragments stored in a directory structure.  This slide file can then be converted into html slides using a tools like s9 and s6.  Additionally, there are a few S9 helpers included that we use to help build the slides.
+The SlideKit class provides methods to build a single slide file out fragments
+stored in a directory structure.  This slide file can then be converted into
+html slides using a tools like s9 and s6.  Additionally, there are a few S9
+helpers included that we use to help build the slides.
 
 Usage:
 
-We have included a sample Rakefile that can be adapted to your project needs.  The slide file building is defined by the Slidekit.build method:  
+We have included a sample Rakefile that can be adapted to your project needs.
+The slide file building is defined by the Slidekit.build method:
 
 s = SlideKit.new(project, outdir)
   s.build
@@ -17,7 +21,7 @@ The configuration yaml file.
 
 Example:
 
-- Introduction to Puppet 
+- Introduction to Puppet
 - - intro
   - assigning_role
   - managing_drift
@@ -38,7 +42,8 @@ footer: Copyright Puppet Labs 2010
 
 The Slide src directory
 
-  <Project Name>/src/slides (contains all of the presentation slides and directories).
+  <Project Name>/src/slides
+  (contains all of the presentation slides and directories).
 
 Example:
 
