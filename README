@@ -4,12 +4,15 @@ Requirements:
 
 Quick Start for Puppetmaster Training:
 * Clone the puppetlabs-slidekit repository:
-* git clone http://github.com/puppetlabs/puppetlabs-slidekit.git
-* Clone the puppetlabs-training repository into puppetlabs-slidekit
-* cd puppetlabs-slidekit
-* git clone http://github.com/puppetlabs/puppetlabs-training.git
-* Execute rake build in the puppetlabs-training folder.
-
+ $ git clone http://github.com/puppetlabs/puppetlabs-slidekit.git
+* Clone the puppetmaster-training repository into puppetmaster-slidekit
+ $ cd puppetlabs-slidekit
+ $ git clone http://github.com/puppetlabs/puppetmaster-training.git
+* Execute rake build in the puppetmaster-training folder.
+ $ cd puppetmaster-training
+ $ rake build[default]
+* The training slides will be dropped into pupppetmaster-training folder on the desktop 
+For any development, please fork the github repository and create your own topic branch.
 
 Overview
 
