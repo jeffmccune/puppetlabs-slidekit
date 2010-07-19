@@ -1,6 +1,6 @@
 Requirements:
 * RedCloth gem (>=4.2.3)
-* textile gem
+* slideshow gem
 
 Quick Start for Puppetmaster Training:
 * Clone the puppetlabs-slidekit repository:
