@@ -1,6 +1,15 @@
 Requirements:
 * RedCloth gem (>=4.2.3)
-* slideshow gem
+* slideshow gem (=0.9.5)
+
+NOTE: The puppetmaster-training project only works with specific versions:
+  RedCloth version 4.2.3
+  slideshow version 0.9.5
+
+To install a specific version:
+ $ gem install slideshow -v 0.9.5
+Ensure later versions are uninstalled with
+ $ gem uninstall slideshow
 
 Quick Start for Puppetmaster Training:
 * Clone the puppetlabs-slidekit repository:
