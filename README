@@ -1,3 +1,18 @@
+Requirements:
+* RedCloth gem (>=4.2.3)
+* textile gem
+
+Quick Start for Puppetmaster Training:
+* Clone the puppetlabs-slidekit repository:
+* git clone http://github.com/puppetlabs/puppetlabs-slidekit.git
+* Clone the puppetlabs-training repository into puppetlabs-slidekit
+* cd puppetlabs-slidekit
+* git clone http://github.com/puppetlabs/puppetlabs-training.git
+* Execute rake build in the puppetlabs-training folder.
+
+
+Overview
+
 The SlideKit class provides methods to build a single slide file out fragments
 stored in a directory structure.  This slide file can then be converted into
 html slides using a tools like s9 and s6.  Additionally, there are a few S9
